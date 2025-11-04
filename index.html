@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>sude ❤ aktaş</title>
+  <style>
+    :root{
+      --bg1:#1a0f1f;
+      --bg2:#4b0034;
+      --accent:#ff4d6d;
+      --glow:#ffb6c1;
+      --text:#fff0f6;
+    }
+    html,body{height:100%;margin:0}
+    body{
+      display:grid;place-items:center;
+      background:radial-gradient(circle at center,var(--bg2),var(--bg1));
+      font-family:'Poppins', 'Segoe UI', sans-serif;
+      color:var(--text);
+      overflow:hidden;
+    }
+    .hearts-bg{
+      position:fixed;inset:0;overflow:hidden;z-index:0;
+    }
+    .hearts-bg span{
+      position:absolute;
+      display:block;
+      width:15px;height:15px;
+      background:var(--accent);
+      clip-path:path('M12 21s-7-4.35-9.07-6.44C.78 11.92 3.02 6 7.5 6c2.03 0 3.27 1.01 4.5 2.29C12.73 7.01 13.97 6 16 6c4.48 0 6.72 5.92 4.57 8.56C19 16.65 12 21 12 21z');
+      opacity:0.3;
+      animation:floatHearts 10s linear infinite;
+    }
+    @keyframes floatHearts{
+      0%{transform:translateY(100vh) scale(0.8);opacity:0.2;}
+      50%{opacity:0.6;}
+      100%{transform:translateY(-10vh) scale(1.2);opacity:0;}
+    }
+    .card{
+      z-index:1;
+      text-align:center;
+      padding:3rem 4rem;
+      background:rgba(255,255,255,0.05);
+      border-radius:24px;
+      box-shadow:0 0 40px rgba(255,182,193,0.3);
+      backdrop-filter:blur(12px);
+      animation:float 4s ease-in-out infinite;
+    }
+    h1{
+      font-size:clamp(32px,7vw,72px);
+      margin:0;
+      display:flex;gap:0.6rem;align-items:center;justify-content:center;
+      text-shadow:0 0 15px var(--glow);
+    }
+    .heart{
+      width:1.1em;height:1.1em;display:inline-block;animation:beat 1s infinite;
+    }
+    p{
+      margin-top:1rem;font-size:1rem;opacity:0.8;
+    }
+
+    @keyframes beat{
+      0%,100%{transform:scale(1)}
+      40%{transform:scale(1.25)}
+      60%{transform:scale(0.9)}
+    }
+    @keyframes float{
+      0%{transform:translateY(0)}
+      50%{transform:translateY(-10px)}
+      100%{transform:translateY(0)}
+    }
+  </style>
+</head>
+<body>
+  <div class="hearts-bg">
+    <span style="left:10%;animation-delay:0s"></span>
+    <span style="left:30%;animation-delay:2s"></span>
+    <span style="left:50%;animation-delay:4s"></span>
+    <span style="left:70%;animation-delay:1s"></span>
+    <span style="left:90%;animation-delay:3s"></span>
+  </div>
+  <div class="card" role="main">
+    <h1>
+      <span>sude</span>
+      <svg class="heart" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path fill="#ff4d6d" d="M12 21s-7-4.35-9.07-6.44C.78 11.92 3.02 6 7.5 6c2.03 0 3.27 1.01 4.5 2.29C12.73 7.01 13.97 6 16 6c4.48 0 6.72 5.92 4.57 8.56C19 16.65 12 21 12 21z"></path>
+      </svg>
+      <span>aktaş</span>
+    </h1>
+    <p>Bir kalp, iki isim, tek ritim 💞</p>
+  </div>
+</body>
+</html>
